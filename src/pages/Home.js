@@ -8,7 +8,6 @@ let originalList = [];
 
 const Home = (props) => {
   const [coins, setCoins] = useState([]);
-  // const [coinValue, setCoinValue] = useState('');
 
   useEffect(() => {
     fetchCoins();

@@ -6,26 +6,33 @@ export const stylesCoin = StyleSheet.create({
         flexDirection: 'row',
         marginBottom: 5,
         backgroundColor:'#cecefe',
-        alignItems:'center',
     },
     textContainer: {
         display: 'flex',
         flexDirection: 'row',
         alignItems:'center',
     },
+    containerLeft:{
+        display:'flex',
+        flexDirection:'column',
+        width: Dimensions.get('window').width * 0.35,
+    },
+    containerRight: {
+        display:'flex',
+        flexDirection:'row',
+        alignItems:'center',
+        width: Dimensions.get('window').width * 0.40,
+    },
     named: {
-        width: Dimensions.get('window').width * 0.25,
-        color: 'white',
+        color: 'black',
         alignItems:'center',
         fontSize: 14,
         marginRight: 15,
         fontWeight:'bold',
-        padding:5,
     },
     symbol: {
         color: 'white',
         fontWeight:'bold',
-        width: Dimensions.get('window').width * 0.20,
     },
 
     price: {
@@ -40,13 +47,15 @@ export const stylesCoin = StyleSheet.create({
         margin: 15,
     },
     changePercent: {
-        fontSize: 10,
+        fontSize: 12,
         color: 'green',
         marginLeft: 5,
+        fontWeight:'bold',
     },
     changePercentRed:{
-        fontSize: 10,
+        fontSize: 12,
         color: 'red',
         marginLeft: 5,
+        fontWeight:'bold',
     },
 });
