@@ -18,11 +18,11 @@ const Home = (props) => {
     setCoins(responser.data);
     originalList = [...responser.data];
   };
-  console.log(originalList);
+
   const renderCoins = ({ item }) => {
     return (
       <View>
-        <Coin item={item}/>
+        <Coin item={item} onClicked = {() => props.navigation.navigate('DetailCoinsPage', {selectedCoin: item})}/>
       </View>
     );
   };
