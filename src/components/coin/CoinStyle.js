@@ -15,13 +15,12 @@ export const stylesCoin = StyleSheet.create({
     containerLeft:{
         display:'flex',
         flexDirection:'column',
-        width: Dimensions.get('window').width * 0.35,
+        width: Dimensions.get('window').width * 0.40,
     },
     containerRight: {
         display:'flex',
-        flexDirection:'row',
         alignItems:'center',
-        width: Dimensions.get('window').width * 0.40,
+        width: Dimensions.get('window').width * 0.30,
     },
     named: {
         color: 'black',

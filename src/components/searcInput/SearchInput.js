@@ -8,7 +8,7 @@ const SearchInput = (props) => {
         <View style={inputStyles.containerSearch}>
             <TextInput
                 onChangeText={value => props.searchValue(value)}
-                placeholder="Search a Coin Name"
+                placeholder={props.holder}
                 style={inputStyles.search}
             />
         </View>

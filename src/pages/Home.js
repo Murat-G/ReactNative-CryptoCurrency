@@ -31,8 +31,8 @@ const filteredCoins = (value) => {
     const filterCoin = originalList.filter((i) => {
     const text = value.toLowerCase();
     const coin = i.name.toLowerCase();
-
-      return coin.includes(text);
+    const coinAbv = i.symbol.toLowerCase();
+      return coin.includes(text) || coinAbv.includes(text);
     });
     setCoins(filterCoin);
 };
@@ -40,7 +40,7 @@ const filteredCoins = (value) => {
   return (
     <SafeAreaView>
       <View>
-        <SearchInput searchValue={value=> filteredCoins(value)}  />
+        <SearchInput searchValue={value=> filteredCoins(value)} holder="Search a Coin" />
         <FlatList
           keyExtractor={(_, index) => index.toString()}
           data={coins}

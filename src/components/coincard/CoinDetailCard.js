@@ -3,7 +3,12 @@ import { Text, View, Image, SafeAreaView } from 'react-native';
 import { detailStyles } from './CoinDetailCardStyle';
 
 const CoinDetailCard = ({ selectedCoin }) => {
-    console.log(selectedCoin);
+    function formatDollar(number) {
+        var p = number.toFixed(2).split('.');
+        return '$' + p[0].split('').reverse().reduce(function(acc, num, i, orig) {
+            return  num === '-' ? acc : num + (i && !(i % 3) ? ',' : '') + acc;
+        }, '') + '.' + p[1];
+    }
     return (
         <SafeAreaView style={detailStyles.container}>
             <View style={detailStyles.header}>
@@ -11,11 +16,9 @@ const CoinDetailCard = ({ selectedCoin }) => {
                 <View style={detailStyles.coinName}>
                     <Text style={detailStyles.named}> {selectedCoin.name} </Text>
                     <Text style={detailStyles.symbol}> {selectedCoin.symbol.toUpperCase()} </Text>
-                    <Text style={detailStyles.coinVolume}> {selectedCoin.total_volume.toLocaleString()} </Text>
-                    <Text style={detailStyles.coinVolume}> {selectedCoin.market_cap.toLocaleString()} </Text>
+                    <Text style={detailStyles.coinVolume}> {formatDollar(selectedCoin.total_volume)} </Text>
+                    <Text style={detailStyles.coinVolume}> {formatDollar(selectedCoin.market_cap)} </Text>
                 </View>
-            </View>
-            <View style={detailStyles.card}>
                 <Text style={detailStyles.price}> ${selectedCoin.current_price} </Text>
                 {
                     selectedCoin.price_change_percentage_24h > 0

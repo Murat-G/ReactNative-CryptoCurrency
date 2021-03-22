@@ -4,6 +4,7 @@ import { stylesCoin } from './CoinStyle';
 
 
 const Coin = ({item, onClicked}) => {
+
     return (
         <View style={stylesCoin.container}>
             <Image source={{ uri: item.image }} style={stylesCoin.image} />
