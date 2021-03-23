@@ -13,6 +13,8 @@ export const inputStyles = StyleSheet.create({
     containerSearch: {
         marginBottom: 5,
         padding: 5,
-        backgroundColor: '#efefef',
+        backgroundColor: '#FF4D4D',
+        borderRadius: 35,
+        marginTop:5,
     },
 });

@@ -21,9 +21,7 @@ const Home = (props) => {
 
   const renderCoins = ({ item }) => {
     return (
-      <View>
         <Coin item={item} onClicked = {() => props.navigation.navigate('DetailCoinsPage', {selectedCoin: item})}/>
-      </View>
     );
   };
 
@@ -37,7 +35,7 @@ const filteredCoins = (value) => {
     setCoins(filterCoin);
 };
 
-  return (
+return (
     <SafeAreaView>
       <View>
         <SearchInput searchValue={value=> filteredCoins(value)} holder="Search a Coin" />
